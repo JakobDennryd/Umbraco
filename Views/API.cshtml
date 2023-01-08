@@ -5,7 +5,7 @@
 @{
     Layout = "master.cshtml";
 
-
+    var image = Model.ImageFile.Url();
 
     var data = await ApiClient.GetApiResponseAsync();
 }
@@ -20,8 +20,12 @@
 
     else
     {
-        <div>
+        <div style="display:flex; align-items:center; justify-content:center;flex-direction:column;"> 
+           <img src="@image" />
+           <div>
+            
             @data.value
+           </div>
         </div>
     }
-</div>
+  </div>
