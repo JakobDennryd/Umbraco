@@ -1,0 +1,28 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ContentModels.Home>
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@{
+	Layout = "master.cshtml";
+	var image = Model.Imagefile.Url();
+}
+		
+		
+		
+		<div class="jumbotron text-center jumbotron-fluid">
+			<div class="container">
+				<h1 class="display-1">@Model.Value("headline")</h1>
+				<p> Learning Umbraco</p>
+			</div>
+		</div>
+
+		<!-- Content -->
+		
+		<div class="container">
+
+		<img src="@image" />
+
+			<div class="row section">
+				@Model.Value("text")
+			</div>
+
+		</div>

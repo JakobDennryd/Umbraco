@@ -1,0 +1,27 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ContentModels.API>
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@using System.Net.Http;
+@{
+    Layout = "master.cshtml";
+
+
+
+    var data = await ApiClient.GetApiResponseAsync();
+}
+
+<div>
+    @if (data == null)
+    {
+        <div>
+            Api call failed
+        </div>
+    }
+
+    else
+    {
+        <div>
+            @data.value
+        </div>
+    }
+</div>
